@@ -1,0 +1,59 @@
+01)
+	START TRANSACTION;
+	INSERT INTO customer(Id, FirstName, LastName, City, Phone) 
+	VALUES('92', 'Alex', 'Perera', 'Colombo', 'Sri Lanka', '077-1231234');
+	COMMIT;
+	SELECT*FROM customer;
+
+02)
+	START TRANSACTION;
+	INSERT INTO customer(Id, FirstName, LastName, City, Country, Phone)
+	VALUES('93', 'Alexian', 'Fedrick', 'Chilaw', 'Sri Lanka','077-1112223');
+	ROLLBACK;
+	SELECT*FROM customer;
+
+03)
+	START TRANSACTION;
+	INSERT INTO purchase_order(Id, OrderDate, OrderNumber, CustomerId, TotalAmount) 
+	VALUES('43', '2020-10-16', '542420', '51', '2100.00');
+	INSERT INTO orderitem (Id, OrderId, ProductId, UnitPrice, Quantity) 
+	VALUES ('145', '43', '79', '210.00', '10');
+	COMMIT;
+
+04)
+	START TRANSACTION;
+	DELETE FROM purchase_order WHERE CustomerId='63';
+	COMMIT;
+	SELECT * FROM purchase_order;
+
+05)
+
+	START TRANSACTION;
+	DELETE FROM supplier WHERE Id=(SELECT SupplierId FROM product WHERE ProductName='Chai');
+	ROLLBACK;
+	COMMIT;
+	SELECT * FROM supplier;
+
+06)
+
+	START TRANSACTION;
+	UPDATE customer SET FirstName='Mary' WHERE FirstName='Maria' AND Country='Germany';
+	COMMIT;
+	SELECT FirstName, Country FROM customer WHERE Country='Germany';
+
+07)
+	START TRANSACTION;
+	UPDATE customer SET Phone='171-8885621' WHERE FirstName='Victoria';
+	SELECT * FROM customer WHERE FirstName='Victoria';
+	ROLLBACK;
+	SELECT * FROM customer WHERE FirstName='Victoria';
+
+
+	
+
+	
+
+	
+
+	
+
