@@ -1,0 +1,11 @@
+1. SELECT Customer.*,OrderItem.OrderId FROM Customer INNER JOIN OrderItem ON Customer.Id = OrderItem.Id WHERE OrderItem.Quantity >= 3
+2. CREATE INDEX CountryIndex ON Customer(Country);
+3. CREATE INDEX PriceUnit ON Product(UnitPrice DESC);
+4. SHOW INDEX FROM Customer;
+5. EXPLAIN SELECT Firstname, Lastname FROM Customer WHERE Country = "Spain";
+6. ALTER TABLE Customer DROP INDEX CountryIndex
+7. ALTER TABLE Customer ADD UNIQUE("Phone");
+8. INSERT INTO "Customer" ("Id","FirstName", "LastName", "City", "Country", "Phone")
+	VALUES (100, "Jenny", "Mendal", "Graz", "Australia", "7675-3425")
+9. ALTER TABLE "Customer" ADD INDEX("Phone");
+10. ALTER TABLE "Customer" DROP INDEX FirstName, LastName, City, Country, Phone
