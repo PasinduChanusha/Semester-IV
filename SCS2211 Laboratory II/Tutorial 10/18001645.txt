@@ -1,0 +1,4 @@
+Nominal- Subject codes, Gender, Favorite color, Colors, Country
+Ordinal- 1st Year < 2nd Year, low < medium < high, Places in a race, student's rank in the class, World Number 1<orld Number 2
+Interval- Celsius Temperature, Farenhite Temperature, Time, voltage, IQ 
+Ration- Weight, Height, Length, Speed, Velocity
