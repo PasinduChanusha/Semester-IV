@@ -1,0 +1,109 @@
+
+R version 4.0.3 (2020-10-10) -- "Bunny-Wunnies Freak Out"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> id <- c(101:150)
+> gender <- sample(c("Male", "Female"), size=50, 
++ replace=TRUE, prob=c(0.5,0.5))
+> department <- sample(c("sales","hr","accounts"), size=50, 
++ replace = TRUE, prob = c(0.5,0.25,0.25))
+> da <- data.frame(id, gender, department)
+> da
+    id gender department
+1  101 Female      sales
+2  102   Male      sales
+3  103   Male      sales
+4  104   Male         hr
+5  105   Male      sales
+6  106 Female   accounts
+7  107   Male      sales
+8  108 Female         hr
+9  109   Male      sales
+10 110 Female         hr
+11 111 Female      sales
+12 112 Female   accounts
+13 113 Female   accounts
+14 114 Female      sales
+15 115   Male      sales
+16 116 Female         hr
+17 117   Male      sales
+18 118 Female         hr
+19 119 Female         hr
+20 120 Female      sales
+21 121 Female      sales
+22 122   Male   accounts
+23 123 Female   accounts
+24 124 Female   accounts
+25 125   Male      sales
+26 126   Male   accounts
+27 127   Male   accounts
+28 128   Male   accounts
+29 129   Male      sales
+30 130 Female      sales
+31 131   Male   accounts
+32 132 Female      sales
+33 133 Female      sales
+34 134 Female         hr
+35 135 Female   accounts
+36 136   Male         hr
+37 137   Male      sales
+38 138 Female      sales
+39 139   Male         hr
+40 140 Female      sales
+41 141 Female         hr
+42 142 Female      sales
+43 143   Male   accounts
+44 144 Female      sales
+45 145   Male         hr
+46 146   Male         hr
+47 147 Female      sales
+48 148 Female         hr
+49 149   Male   accounts
+50 150   Male      sales
+> rnorm2 <- function(n,mean,sd) {mean+sd*scale(rnorm(n))}
+> sales <-rnorm2(25,15000,1250)
+> hr <- rnorm2(12,25000,2500)
+> accounts <- seq(15000,16000,lenght=13)
+Warning message:
+In seq.default(15000, 16000, lenght = 13) :
+ extra argument ‘lenght’ will be disregarded 
+> head(da,n=6)
+   id gender department
+1 101 Female      sales
+2 102   Male      sales
+3 103   Male      sales
+4 104   Male         hr
+5 105   Male      sales
+6 106 Female   accounts
+> tail(da,n=6)
+    id gender department
+45 145   Male         hr
+46 146   Male         hr
+47 147 Female      sales
+48 148 Female         hr
+49 149   Male   accounts
+50 150   Male      sales
+> summary(da)
+       id           gender           department       
+ Min.   :101.0   Length:50          Length:50         
+ 1st Qu.:113.2   Class :character   Class :character  
+ Median :125.5   Mode  :character   Mode  :character  
+ Mean   :125.5                                        
+ 3rd Qu.:137.8                                        
+ Max.   :150.0                                        
+> 
